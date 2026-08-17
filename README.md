@@ -62,10 +62,21 @@ Ya reflejados en las plantillas:
    ventas: anunciar una rebaja exige mostrar el precio más bajo de los 30 días
    anteriores (Directiva Omnibus / RDL 24/2021). O se vende a 40 € durante 30 días,
    o se lanza a 19,99 € sin tachar.
-4. **Políticas de envío y devolución en la tienda.** Solo existe la de privacidad.
-5. **Stock.** Las variantes están con inventario controlado y 0 unidades: al publicar
-   saldrían como agotadas.
+4. **Pegar las políticas.** Escritas en `docs/politicas/`. No se pudieron publicar por
+   API: el conector no tiene el permiso `write_legal_policies`. Hay que pegarlas a mano
+   en *Settings → Policies*.
+5. **Aviso legal (LSSI).** Falta y es obligatorio en España: nombre o razón social,
+   NIF, domicilio y correo de contacto. No se ha escrito porque no se dispone de esos
+   datos.
 6. Reseñas: no hay bloque de reseñas, y no se pondrá ninguna inventada.
+
+## Ya resuelto en la tienda
+
+- Producto en borrador con variantes Verde y Gris, 19,99 € y 40 € tachado.
+- Materiales: plástico reforzado con pulsador de dedo. Sin medidas, por decisión del cliente.
+- Inventario **sin controlar** en ambas variantes, para que no aparezca «Agotado»
+  con plazos de envío largos.
+- Producto añadido a la colección de portada.
 
 ## Subir el tema a la tienda
 
