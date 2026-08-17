@@ -97,6 +97,7 @@
       var priceEl = document.querySelector('[data-product-price]');
       var submitEl = form ? form.querySelector('[data-add-button]') : null;
       var stickySubmit = document.querySelector('[data-sticky-atc] [data-add-button]');
+      var gallery = document.querySelector('[data-product-gallery]');
       var moneyFormat = picker.getAttribute('data-money-format') || '{{amount}}';
       var soldOutLabel = picker.getAttribute('data-sold-out-label') || 'Agotado';
       var addLabel = picker.getAttribute('data-add-label') || 'Añadir al carrito';
@@ -143,10 +144,23 @@
         }
       }
 
+      // Bring the selected variant's image to the front of the gallery, so
+      // picking a colour shows that colour first without a page reload.
+      function showVariantMedia(variant) {
+        if (!gallery || !variant || !variant.featured_media_id) return;
+
+        var target = gallery.querySelector('[data-media-id="' + variant.featured_media_id + '"]');
+        if (!target || target === gallery.firstElementChild) return;
+
+        gallery.prepend(target);
+      }
+
       function update() {
         var variant = matchVariant(selectedOptions());
 
         if (variant && idInput) idInput.value = variant.id;
+
+        showVariantMedia(variant);
 
         if (variant && priceEl) {
           var html = '<span class="price__current">' + formatMoney(variant.price) + '</span>';
