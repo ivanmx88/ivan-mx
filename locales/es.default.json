@@ -1,0 +1,104 @@
+{
+  "accessibility": {
+    "skip_to_content": "Ir al contenido",
+    "close": "Cerrar",
+    "menu": "Menú",
+    "cart": "Carrito",
+    "search": "Buscar",
+    "previous_page": "Página anterior",
+    "next_page": "Página siguiente"
+  },
+  "general": {
+    "pagination": {
+      "page": "Página {{ number }}",
+      "label": "Paginación"
+    },
+    "search": {
+      "title": "Buscar",
+      "placeholder": "¿Qué estás buscando?",
+      "submit": "Buscar",
+      "results_with_count": {
+        "one": "{{ count }} resultado",
+        "other": "{{ count }} resultados"
+      },
+      "no_results": "No hemos encontrado nada para «{{ terms }}». Prueba con otra palabra."
+    },
+    "404": {
+      "title": "Esta página no existe",
+      "subtext": "Puede que el enlace esté roto o que la página se haya movido.",
+      "link": "Volver a la tienda"
+    },
+    "newsletter": {
+      "success": "¡Gracias! Ya estás suscrita."
+    },
+    "password_page": {
+      "password_label": "Contraseña",
+      "submit": "Entrar"
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Mi cuenta"
+    }
+  },
+  "header": {
+    "menu": "Menú",
+    "cart_count": {
+      "one": "{{ count }} artículo",
+      "other": "{{ count }} artículos"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Añadir al carrito",
+      "sold_out": "Agotado",
+      "unavailable": "No disponible",
+      "quantity": "Cantidad",
+      "decrease_quantity": "Restar uno",
+      "increase_quantity": "Sumar uno",
+      "on_sale": "Oferta",
+      "from_price": "Desde {{ price }}",
+      "sale_badge": "-{{ percent }}%",
+      "vendor": "Marca",
+      "sku": "Referencia",
+      "view_details": "Ver producto",
+      "description": "Descripción",
+      "specs": "Medidas y materiales",
+      "how_to_use": "Cómo se usa",
+      "shipping_returns": "Envío y devoluciones",
+      "media_gallery": "Galería de imágenes"
+    }
+  },
+  "collections": {
+    "general": {
+      "product_count": {
+        "one": "{{ count }} producto",
+        "other": "{{ count }} productos"
+      },
+      "no_products": "Todavía no hay productos en esta colección.",
+      "sort_by": "Ordenar por",
+      "view_all": "Ver todo"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Tu carrito",
+      "empty": "Tu carrito está vacío",
+      "continue_shopping": "Seguir comprando",
+      "subtotal": "Subtotal",
+      "checkout": "Finalizar compra",
+      "remove": "Quitar",
+      "taxes_note": "Impuestos incluidos. Los gastos de envío se calculan en el checkout.",
+      "free_shipping_progress": "Te faltan {{ amount }} para el envío gratis",
+      "free_shipping_reached": "¡Envío gratis conseguido!"
+    }
+  },
+  "newsletter": {
+    "label": "Tu correo electrónico",
+    "submit": "Suscribirme"
+  },
+  "onboarding": {
+    "product_title": "Nombre del producto",
+    "collection_title": "Nombre de la colección"
+  }
+}

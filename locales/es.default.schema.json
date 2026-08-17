@@ -1,0 +1,53 @@
+{
+  "settings": {
+    "brand": {
+      "name": "Marca",
+      "logo": "Logo",
+      "logo_width": "Ancho del logo",
+      "wordmark": "Nombre en texto",
+      "wordmark_info": "Se muestra si no has subido un logo.",
+      "favicon": "Favicon"
+    },
+    "colors": {
+      "name": "Colores",
+      "background": "Fondo",
+      "surface": "Fondo secundario",
+      "text": "Texto",
+      "text_muted": "Texto secundario",
+      "accent": "Acento",
+      "line": "Líneas y bordes",
+      "button": "Fondo de botón",
+      "button_text": "Texto de botón",
+      "sale": "Precio rebajado"
+    },
+    "typography": {
+      "name": "Tipografía",
+      "heading_font": "Fuente de títulos",
+      "body_font": "Fuente de texto",
+      "heading_scale": "Tamaño de títulos",
+      "heading_uppercase": "Títulos en mayúsculas"
+    },
+    "layout": {
+      "name": "Diseño",
+      "page_width": "Ancho máximo de página",
+      "corner_radius": "Redondeo de esquinas",
+      "corner_radius_info": "0 para un look más plano y editorial."
+    },
+    "product_card": {
+      "name": "Tarjeta de producto",
+      "image_ratio": "Proporción de la imagen",
+      "ratio_portrait": "Vertical (3:4)",
+      "ratio_square": "Cuadrada (1:1)",
+      "hover_second_image": "Mostrar segunda imagen al pasar el ratón",
+      "show_swatches": "Mostrar colores disponibles"
+    },
+    "cart": {
+      "name": "Carrito",
+      "free_shipping_threshold": "Importe para envío gratis",
+      "free_shipping_threshold_info": "En la moneda de la tienda, sin símbolo. Ej: 39. Déjalo vacío para ocultar la barra de progreso."
+    },
+    "social": {
+      "name": "Redes sociales"
+    }
+  }
+}

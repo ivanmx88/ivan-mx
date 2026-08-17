@@ -1,0 +1,66 @@
+<div class="section{% if section.settings.surface %} section--surface{% endif %}">
+  <div class="page">
+    <div class="image-with-text{% if section.settings.reverse %} image-with-text--reverse{% endif %}">
+      <div class="image-with-text__media media {% if section.settings.ratio == 'square' %}media--square{% else %}media--wide{% endif %}">
+        {%- if section.settings.image != blank -%}
+          <img
+            src="{{ section.settings.image | image_url: width: 1200 }}"
+            srcset="
+              {{ section.settings.image | image_url: width: 600 }} 600w,
+              {{ section.settings.image | image_url: width: 1200 }} 1200w
+            "
+            sizes="(min-width: 750px) 50vw, 100vw"
+            alt="{{ section.settings.image.alt | escape }}"
+            width="{{ section.settings.image.width }}"
+            height="{{ section.settings.image.height }}"
+            loading="lazy"
+          >
+        {%- else -%}
+          {{ 'detailed-apparel-1' | placeholder_svg_tag }}
+        {%- endif -%}
+      </div>
+
+      <div class="image-with-text__content">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        <h2>{{ section.settings.heading }}</h2>
+        {%- if section.settings.text != blank -%}
+          <div class="rte stack">{{ section.settings.text }}</div>
+        {%- endif -%}
+        {%- if section.settings.button_label != blank -%}
+          <p class="stack">
+            <a class="button" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+          </p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Imagen con texto",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Imagen" },
+    {
+      "type": "select",
+      "id": "ratio",
+      "label": "Proporción",
+      "options": [
+        { "value": "wide", "label": "Panorámica (16:9)" },
+        { "value": "square", "label": "Cuadrada (1:1)" }
+      ],
+      "default": "square"
+    },
+    { "type": "checkbox", "id": "reverse", "label": "Imagen a la derecha", "default": false },
+    { "type": "checkbox", "id": "surface", "label": "Fondo secundario", "default": false },
+    { "type": "text", "id": "eyebrow", "label": "Antetítulo" },
+    { "type": "text", "id": "heading", "label": "Título", "default": "Pensado para el día a día" },
+    { "type": "richtext", "id": "text", "label": "Texto" },
+    { "type": "text", "id": "button_label", "label": "Botón" },
+    { "type": "url", "id": "button_link", "label": "Enlace del botón" }
+  ],
+  "presets": [{ "name": "Imagen con texto" }]
+}
+{% endschema %}

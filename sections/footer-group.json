@@ -1,0 +1,23 @@
+{
+  "name": "Pie de página",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "help": {
+          "type": "menu",
+          "settings": {
+            "heading": "Ayuda",
+            "menu": "footer"
+          }
+        }
+      },
+      "block_order": ["help"],
+      "settings": {
+        "show_payment_icons": true
+      }
+    }
+  },
+  "order": ["footer"]
+}

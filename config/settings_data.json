@@ -1,0 +1,28 @@
+{
+  "current": {
+    "logo_width": 120,
+    "logo_wordmark": "AUREA",
+    "color_background": "#FFFFFF",
+    "color_surface": "#F4F6F2",
+    "color_text": "#1D2321",
+    "color_text_muted": "#6E7671",
+    "color_accent": "#7FA93F",
+    "color_line": "#E6E8E3",
+    "color_button": "#1D2321",
+    "color_button_text": "#FFFFFF",
+    "color_sale": "#C0492F",
+    "type_heading_font": "assistant_n6",
+    "type_body_font": "assistant_n4",
+    "type_heading_scale": 100,
+    "type_heading_uppercase": false,
+    "layout_page_width": 1360,
+    "layout_corner_radius": 8,
+    "card_image_ratio": "square",
+    "card_hover_second_image": true,
+    "card_show_color_swatches": true,
+    "cart_free_shipping_threshold": "",
+    "social_instagram": "",
+    "social_tiktok": "",
+    "social_pinterest": ""
+  }
+}

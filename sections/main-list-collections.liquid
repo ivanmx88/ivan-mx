@@ -1,0 +1,38 @@
+<div class="section">
+  <div class="page">
+    <div class="collection__header">
+      <h1>{{ page_title }}</h1>
+    </div>
+
+    <div class="product-grid product-grid--4">
+      {%- for collection in collections -%}
+        <a class="card" href="{{ collection.url }}">
+          <div class="card__media media media--square">
+            {%- if collection.featured_image -%}
+              <img
+                src="{{ collection.featured_image | image_url: width: 800 }}"
+                alt="{{ collection.featured_image.alt | escape }}"
+                width="{{ collection.featured_image.width }}"
+                height="{{ collection.featured_image.height }}"
+                loading="lazy"
+              >
+            {%- else -%}
+              {{ 'collection-1' | placeholder_svg_tag }}
+            {%- endif -%}
+          </div>
+          <h3 class="card__title">{{ collection.title }}</h3>
+          <span class="text-xs text-muted">
+            {{ 'collections.general.product_count' | t: count: collection.all_products_count }}
+          </span>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lista de colecciones",
+  "settings": []
+}
+{% endschema %}

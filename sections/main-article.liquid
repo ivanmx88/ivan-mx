@@ -1,0 +1,27 @@
+<article class="section">
+  <div class="page page--narrow">
+    <h1>{{ article.title }}</h1>
+    <p class="text-xs text-muted">{{ article.published_at | date: '%d/%m/%Y' }}</p>
+
+    {%- if article.image -%}
+      <div class="media media--wide" style="margin-block: 1.5rem;">
+        <img
+          src="{{ article.image | image_url: width: 1400 }}"
+          alt="{{ article.image.alt | escape }}"
+          width="{{ article.image.width }}"
+          height="{{ article.image.height }}"
+          loading="eager"
+        >
+      </div>
+    {%- endif -%}
+
+    <div class="rte stack">{{ article.content }}</div>
+  </div>
+</article>
+
+{% schema %}
+{
+  "name": "Artículo",
+  "settings": []
+}
+{% endschema %}

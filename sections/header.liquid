@@ -1,0 +1,101 @@
+<header class="header">
+  <div class="page">
+    <div class="header__inner">
+      <button
+        class="header__icon header__menu-toggle"
+        type="button"
+        data-drawer-open
+        aria-label="{{ 'accessibility.menu' | t }}"
+      >
+        {% render 'icon', name: 'menu' %}
+      </button>
+
+      <nav class="header__nav" role="navigation">
+        {%- for link in section.settings.menu.links -%}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {%- endfor -%}
+      </nav>
+
+      {%- if request.page_type == 'index' -%}
+        <h1 class="header__logo">
+      {%- else -%}
+        <div class="header__logo">
+      {%- endif -%}
+        <a href="{{ routes.root_url }}">
+          {%- if settings.logo != blank -%}
+            <img
+              src="{{ settings.logo | image_url: width: 480 }}"
+              alt="{{ shop.name | escape }}"
+              width="{{ settings.logo.width }}"
+              height="{{ settings.logo.height }}"
+              style="width: {{ settings.logo_width }}px;"
+            >
+          {%- else -%}
+            {{ settings.logo_wordmark | default: shop.name }}
+          {%- endif -%}
+        </a>
+      {%- if request.page_type == 'index' -%}
+        </h1>
+      {%- else -%}
+        </div>
+      {%- endif -%}
+
+      <div class="header__actions">
+        <a class="header__icon" href="{{ routes.search_url }}" aria-label="{{ 'accessibility.search' | t }}">
+          {% render 'icon', name: 'search' %}
+        </a>
+
+        {%- if shop.customer_accounts_enabled -%}
+          <a class="header__icon" href="{{ routes.account_url }}" aria-label="{{ 'customer.account.title' | t }}">
+            {% render 'icon', name: 'user' %}
+          </a>
+        {%- endif -%}
+
+        <a class="header__icon" href="{{ routes.cart_url }}" aria-label="{{ 'accessibility.cart' | t }}" style="position: relative;">
+          {% render 'icon', name: 'cart' %}
+          {%- if cart.item_count > 0 -%}
+            <span class="header__cart-count">{{ cart.item_count }}</span>
+          {%- endif -%}
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" data-drawer>
+  <div class="drawer__overlay" data-drawer-close></div>
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="{{ 'accessibility.menu' | t }}">
+    <button
+      class="header__icon"
+      type="button"
+      data-drawer-close
+      aria-label="{{ 'accessibility.close' | t }}"
+      style="margin-left: auto;"
+    >
+      {% render 'icon', name: 'close' %}
+    </button>
+
+    <nav class="drawer__nav" role="navigation">
+      {%- for link in section.settings.menu.links -%}
+        <a href="{{ link.url }}" data-drawer-close>{{ link.title }}</a>
+      {%- endfor -%}
+    </nav>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Cabecera",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menú",
+      "default": "main-menu"
+    }
+  ],
+  "enabled_on": {
+    "groups": ["header"]
+  }
+}
+{% endschema %}

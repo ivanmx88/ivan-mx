@@ -1,0 +1,116 @@
+<div class="section">
+  <div class="page page--narrow">
+    <h1>{{ 'cart.general.title' | t }}</h1>
+
+    {%- if cart.item_count == 0 -%}
+      <div class="empty-state">
+        <p class="text-muted">{{ 'cart.general.empty' | t }}</p>
+        <p class="stack">
+          <a class="button" href="{{ routes.all_products_collection_url }}">
+            {{ 'cart.general.continue_shopping' | t }}
+          </a>
+        </p>
+      </div>
+    {%- else -%}
+      {%- liquid
+        assign threshold_value = settings.cart_free_shipping_threshold | times: 1
+        assign threshold = threshold_value | times: 100
+      -%}
+
+      {%- if threshold > 0 -%}
+        {%- if cart.total_price >= threshold -%}
+          <div class="free-shipping-bar">
+            <strong>{{ 'cart.general.free_shipping_reached' | t }}</strong>
+            <div class="free-shipping-bar__track"><div class="free-shipping-bar__fill" style="width: 100%;"></div></div>
+          </div>
+        {%- else -%}
+          {%- assign remaining = threshold | minus: cart.total_price -%}
+          {%- assign remaining_formatted = remaining | money -%}
+          {%- assign progress = cart.total_price | times: 100 | divided_by: threshold -%}
+          <div class="free-shipping-bar">
+            {{ 'cart.general.free_shipping_progress' | t: amount: remaining_formatted }}
+            <div class="free-shipping-bar__track"><div class="free-shipping-bar__fill" style="width: {{ progress }}%;"></div></div>
+          </div>
+        {%- endif -%}
+      {%- endif -%}
+
+      <form action="{{ routes.cart_url }}" method="post" novalidate>
+        {%- for item in cart.items -%}
+          <div class="cart__line">
+            <a href="{{ item.url }}" class="media media--square" style="width: 88px;">
+              {%- if item.image -%}
+                <img
+                  src="{{ item.image | image_url: width: 200 }}"
+                  alt="{{ item.image.alt | escape }}"
+                  width="88"
+                  height="88"
+                  loading="lazy"
+                >
+              {%- endif -%}
+            </a>
+
+            <div>
+              <a class="cart__line-title" href="{{ item.url }}">{{ item.product.title }}</a>
+
+              {%- unless item.product.has_only_default_variant -%}
+                <div class="text-sm text-muted">{{ item.variant.title }}</div>
+              {%- endunless -%}
+
+              <div class="price" style="margin-top: 0.25rem;">
+                <span class="price__current">{{ item.final_line_price | money }}</span>
+                {%- if item.original_line_price > item.final_line_price -%}
+                  <s class="price__compare">{{ item.original_line_price | money }}</s>
+                {%- endif -%}
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 1rem; margin-top: 0.75rem;">
+                <div class="cart__quantity" data-quantity>
+                  <button type="button" data-quantity-change="-1" aria-label="{{ 'products.product.decrease_quantity' | t }}">
+                    {% render 'icon', name: 'minus' %}
+                  </button>
+                  <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">{{ 'products.product.quantity' | t }}</label>
+                  <input
+                    id="Quantity-{{ item.index | plus: 1 }}"
+                    type="number"
+                    name="updates[]"
+                    value="{{ item.quantity }}"
+                    min="0"
+                    inputmode="numeric"
+                    onchange="this.form.submit()"
+                  >
+                  <button type="button" data-quantity-change="1" aria-label="{{ 'products.product.increase_quantity' | t }}">
+                    {% render 'icon', name: 'plus' %}
+                  </button>
+                </div>
+
+                <a class="text-sm link-underline text-muted" href="{{ item.url_to_remove }}">
+                  {{ 'cart.general.remove' | t }}
+                </a>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+
+        <div class="cart__summary">
+          <div class="cart__total">
+            <span>{{ 'cart.general.subtotal' | t }}</span>
+            <span>{{ cart.total_price | money }}</span>
+          </div>
+
+          <p class="text-sm text-muted">{{ 'cart.general.taxes_note' | t }}</p>
+
+          <button class="button button--full" type="submit" name="checkout" style="margin-top: 1rem;">
+            {{ 'cart.general.checkout' | t }}
+          </button>
+        </div>
+      </form>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Carrito",
+  "settings": []
+}
+{% endschema %}

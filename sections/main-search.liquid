@@ -1,0 +1,63 @@
+<div class="section">
+  <div class="page">
+    <div class="collection__header">
+      <h1>{{ 'general.search.title' | t }}</h1>
+
+      <form action="{{ routes.search_url }}" method="get" role="search" style="max-width: 480px; margin-inline: auto;">
+        <div class="newsletter__form">
+          <label class="visually-hidden" for="SearchInput">{{ 'general.search.title' | t }}</label>
+          <input
+            class="field__input"
+            id="SearchInput"
+            type="search"
+            name="q"
+            value="{{ search.terms | escape }}"
+            placeholder="{{ 'general.search.placeholder' | t }}"
+          >
+          <button class="button" type="submit">{{ 'general.search.submit' | t }}</button>
+        </div>
+      </form>
+    </div>
+
+    {%- if search.performed -%}
+      {%- if search.results_count > 0 -%}
+        <p class="text-muted text-center">
+          {{ 'general.search.results_with_count' | t: count: search.results_count }}
+        </p>
+
+        {%- paginate search.results by 24 -%}
+          <div class="product-grid product-grid--4" style="margin-top: 2rem;">
+            {%- for item in search.results -%}
+              {%- if item.object_type == 'product' -%}
+                {% render 'product-card', card_product: item %}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+
+          {%- if paginate.pages > 1 -%}
+            <nav class="pagination" aria-label="{{ 'general.pagination.label' | t }}">
+              {%- for part in paginate.parts -%}
+                {%- if part.is_link -%}
+                  <a href="{{ part.url }}">{{ part.title }}</a>
+                {%- else -%}
+                  <span {% if part.title == paginate.current_page %}aria-current="page"{% endif %}>{{ part.title }}</span>
+                {%- endif -%}
+              {%- endfor -%}
+            </nav>
+          {%- endif -%}
+        {%- endpaginate -%}
+      {%- else -%}
+        <div class="empty-state">
+          <p class="text-muted">{{ 'general.search.no_results' | t: terms: search.terms }}</p>
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Búsqueda",
+  "settings": []
+}
+{% endschema %}

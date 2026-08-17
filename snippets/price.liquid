@@ -1,0 +1,40 @@
+{%- comment -%}
+  Renders a price block.
+  Accepts:
+    - product_or_variant: {Object} product or variant (required)
+    - large: {Boolean} bigger type, used on the product page
+    - id: {String} optional element id (used by the variant picker)
+{%- endcomment -%}
+
+{%- liquid
+  assign target = product_or_variant
+
+  if target.price_varies
+    assign current_price = target.price_min
+  else
+    assign current_price = target.price
+  endif
+
+  assign compare_price = target.compare_at_price
+  assign on_sale = false
+  if compare_price and compare_price > current_price
+    assign on_sale = true
+  endif
+-%}
+
+<div
+  class="price{% if large %} price--large{% endif %}{% if on_sale %} price--on-sale{% endif %}"
+  {% if id %}id="{{ id }}" data-product-price{% endif %}
+>
+  <span class="price__current">
+    {%- if target.price_varies -%}
+      {%- assign formatted_price = current_price | money -%}
+      {{- 'products.product.from_price' | t: price: formatted_price -}}
+    {%- else -%}
+      {{- current_price | money -}}
+    {%- endif -%}
+  </span>
+  {%- if on_sale -%}
+    <s class="price__compare">{{ compare_price | money }}</s>
+  {%- endif -%}
+</div>

@@ -1,0 +1,78 @@
+<div class="section section--tight{% if section.settings.surface %} section--surface{% endif %}">
+  <div class="page">
+    <div class="trust-bar">
+      {%- for block in section.blocks -%}
+        <div class="trust-bar__item" {{ block.shopify_attributes }}>
+          {% render 'icon', name: block.settings.icon %}
+          <div class="trust-bar__title">{{ block.settings.title }}</div>
+          {%- if block.settings.text != blank -%}
+            <div class="trust-bar__text">{{ block.settings.text }}</div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Barra de confianza",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "surface",
+      "label": "Fondo secundario",
+      "default": true
+    },
+    {
+      "type": "paragraph",
+      "content": "Escribe aquí solo cosas que puedas cumplir. Un plazo de envío falso genera más devoluciones que ventas."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Elemento",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icono",
+          "options": [
+            { "value": "truck", "label": "Envío" },
+            { "value": "return", "label": "Devoluciones" },
+            { "value": "lock", "label": "Pago seguro" },
+            { "value": "chat", "label": "Atención al cliente" },
+            { "value": "leaf", "label": "Materiales" },
+            { "value": "sparkle", "label": "Calidad" }
+          ],
+          "default": "truck"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título",
+          "default": "Envío en 24-48 h"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Barra de confianza",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "truck", "title": "Envío en 24-48 h" } },
+        { "type": "item", "settings": { "icon": "return", "title": "30 días para devolver" } },
+        { "type": "item", "settings": { "icon": "lock", "title": "Pago seguro" } },
+        { "type": "item", "settings": { "icon": "chat", "title": "Atención en español" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

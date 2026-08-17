@@ -1,0 +1,85 @@
+{%- comment -%}
+  Renders a product card.
+  Accepts:
+    - card_product: {Object} product (required)
+    - lazy: {Boolean} lazy-load the image (default true)
+{%- endcomment -%}
+
+{%- liquid
+  assign ratio_class = 'media--square'
+  if settings.card_image_ratio == 'portrait'
+    assign ratio_class = 'media--portrait'
+  endif
+
+  assign loading = 'lazy'
+  if lazy == false
+    assign loading = 'eager'
+  endif
+
+  assign on_sale = false
+  if card_product.compare_at_price > card_product.price
+    assign on_sale = true
+  endif
+-%}
+
+<div class="card">
+  <div class="card__media media {{ ratio_class }}">
+    {%- if on_sale -%}
+      {%- assign discount = card_product.compare_at_price | minus: card_product.price | times: 100.0 | divided_by: card_product.compare_at_price | round -%}
+      <span class="card__badge card__badge--sale">-{{ discount }}%</span>
+    {%- elsif card_product.available == false -%}
+      <span class="card__badge">{{ 'products.product.sold_out' | t }}</span>
+    {%- endif -%}
+
+    {%- if card_product.featured_media -%}
+      <img
+        src="{{ card_product.featured_media | image_url: width: 800 }}"
+        srcset="
+          {{ card_product.featured_media | image_url: width: 400 }} 400w,
+          {{ card_product.featured_media | image_url: width: 600 }} 600w,
+          {{ card_product.featured_media | image_url: width: 800 }} 800w
+        "
+        sizes="(min-width: 990px) 400px, 45vw"
+        alt="{{ card_product.featured_media.alt | escape }}"
+        width="{{ card_product.featured_media.width }}"
+        height="{{ card_product.featured_media.height }}"
+        loading="{{ loading }}"
+      >
+
+      {%- if settings.card_hover_second_image and card_product.media[1] -%}
+        {%- assign second_media = card_product.media[1] -%}
+        <img
+          class="card__image--secondary"
+          src="{{ second_media | image_url: width: 800 }}"
+          alt=""
+          width="{{ second_media.preview_image.width }}"
+          height="{{ second_media.preview_image.height }}"
+          loading="lazy"
+          aria-hidden="true"
+        >
+      {%- endif -%}
+    {%- else -%}
+      {{ 'product-1' | placeholder_svg_tag }}
+    {%- endif -%}
+  </div>
+
+  <h3 class="card__title">
+    <a href="{{ card_product.url }}">{{ card_product.title | escape }}</a>
+  </h3>
+
+  {% render 'price', product_or_variant: card_product %}
+
+  {%- if settings.card_show_color_swatches -%}
+    {%- for option in card_product.options_with_values -%}
+      {%- assign downcased = option.name | downcase -%}
+      {%- if downcased == 'color' or downcased == 'colour' -%}
+        <div class="card__swatches" aria-label="{{ option.name | escape }}">
+          {%- for value in option.values limit: 5 -%}
+            <span class="card__swatch" style="background-color: {{ value | downcase | split: ' ' | last }};" title="{{ value | escape }}"></span>
+          {%- endfor -%}
+        </div>
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+</div>

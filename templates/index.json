@@ -1,0 +1,59 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "",
+        "heading": "Lo que usas cada día, bien hecho",
+        "subheading": "Utensilios de cocina que resuelven un problema concreto y duran.",
+        "button_label": "Ver productos",
+        "button_link": "/collections/all"
+      }
+    },
+    "trust": {
+      "type": "trust-bar",
+      "blocks": {
+        "b1": { "type": "item", "settings": { "icon": "truck", "title": "Envío en 24-48 h" } },
+        "b2": { "type": "item", "settings": { "icon": "return", "title": "30 días para devolver" } },
+        "b3": { "type": "item", "settings": { "icon": "lock", "title": "Pago seguro" } },
+        "b4": { "type": "item", "settings": { "icon": "chat", "title": "Atención en español" } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4"],
+      "settings": { "surface": true }
+    },
+    "featured": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Los más vendidos",
+        "products_to_show": 4,
+        "columns": "4",
+        "center": true
+      }
+    },
+    "story": {
+      "type": "image-with-text",
+      "settings": {
+        "heading": "Pensado para el día a día",
+        "ratio": "square"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "question", "settings": { "question": "¿Cuánto tarda el envío?" } },
+        "q2": { "type": "question", "settings": { "question": "¿Puedo devolverlo si no me convence?" } },
+        "q3": { "type": "question", "settings": { "question": "¿Cómo se limpia?" } }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": { "heading": "Preguntas frecuentes" }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Novedades y consejos",
+        "surface": true
+      }
+    }
+  },
+  "order": ["hero", "trust", "featured", "story", "faq", "newsletter"]
+}
