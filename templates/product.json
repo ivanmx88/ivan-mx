@@ -3,8 +3,8 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "r1": { "type": "reassurance", "settings": { "icon": "truck", "text": "Envío en 24-48 h" } },
-        "r2": { "type": "reassurance", "settings": { "icon": "return", "text": "30 días para devolver" } },
+        "r1": { "type": "reassurance", "settings": { "icon": "truck", "text": "Envío en 5-12 días laborables" } },
+        "r2": { "type": "reassurance", "settings": { "icon": "return", "text": "15 días para devolver desde que lo recibes" } },
         "r3": { "type": "reassurance", "settings": { "icon": "lock", "text": "Pago seguro" } },
         "a1": { "type": "accordion", "settings": { "title": "Medidas y materiales" } },
         "a2": { "type": "accordion", "settings": { "title": "Cómo se usa" } },
@@ -15,8 +15,20 @@
     "faq": {
       "type": "faq",
       "blocks": {
-        "q1": { "type": "question", "settings": { "question": "¿Cuánto tarda en llegar?" } },
-        "q2": { "type": "question", "settings": { "question": "¿Se puede meter en el lavavajillas?" } }
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "¿Cuánto tarda en llegar?",
+            "answer": "<p>Entre 5 y 12 días laborables. Te mandamos el número de seguimiento en cuanto sale el paquete.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "¿Y si al recibirlo no me convence?",
+            "answer": "<p>Tienes 15 días desde que lo recibes para devolverlo. Escríbenos y te explicamos el proceso.</p>"
+          }
+        }
       },
       "block_order": ["q1", "q2"],
       "settings": { "heading": "Dudas frecuentes", "surface": true }

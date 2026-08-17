@@ -43,14 +43,29 @@ así que la marca se cambia entera desde el editor de temas sin tocar código.
 - **Barra de envío gratis** en el carrito, opcional, configurable por importe.
 - `prefers-reduced-motion` respetado, foco visible, `skip link`, textos en `locales/`.
 
-## Qué falta
+## Datos reales de la tienda
 
-1. **Catálogo.** La tienda está vacía. Sin productos el tema no se puede ver de verdad.
-2. **Fotos reales del producto** y logo.
-3. **Textos de confianza reales**: plazos de envío, política de devoluciones,
-   datos de la empresa. Los valores por defecto (24-48 h, 30 días) son marcadores —
-   hay que cambiarlos por lo que realmente se pueda cumplir.
-4. Reseñas: no hay bloque de reseñas todavía, y no se pondrá ninguna inventada.
+Ya reflejados en las plantillas:
+
+- Envío: **5 a 12 días laborables**
+- Devoluciones: **15 días desde la recepción** (el mínimo legal en la UE son 14 desde
+  que el cliente recibe el pedido, no desde que compra)
+- Producto: Dispensador de jabón con cepillo, 19,99 €, en verde y gris. **En borrador.**
+
+## Qué falta antes de publicar
+
+1. **Medidas y materiales del producto.** La ficha tiene el bloque marcado como
+   pendiente. No se han inventado: hay que medir el producto o pedir la ficha al
+   proveedor (alto, ancho, capacidad del depósito en ml, material, si admite lavavajillas).
+2. **Fotos.** El producto no tiene ninguna imagen todavía.
+3. **Precio tachado de 40 €.** Está configurado, pero la tienda no tiene historial de
+   ventas: anunciar una rebaja exige mostrar el precio más bajo de los 30 días
+   anteriores (Directiva Omnibus / RDL 24/2021). O se vende a 40 € durante 30 días,
+   o se lanza a 19,99 € sin tachar.
+4. **Políticas de envío y devolución en la tienda.** Solo existe la de privacidad.
+5. **Stock.** Las variantes están con inventario controlado y 0 unidades: al publicar
+   saldrían como agotadas.
+6. Reseñas: no hay bloque de reseñas, y no se pondrá ninguna inventada.
 
 ## Subir el tema a la tienda
 
