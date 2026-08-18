@@ -2,8 +2,10 @@
 
 Tema para la tienda `aurea-17783`. Menaje y utensilios de cocina.
 
-Estado: **esqueleto funcional**. Pasa `theme check` sin avisos, pero todavía no se ha
-subido a ninguna tienda ni se ha visto en un navegador.
+La home es una **landing de producto único** para tráfico de TikTok/Reels: mobile-first,
+un solo CTA repetido («Comprar ahora») y barra de compra fija en móvil.
+
+Pasa `theme check` sin avisos. Está subido a la tienda como tema **sin publicar**.
 
 ## Estructura
 
@@ -12,7 +14,7 @@ assets/       base.css (sistema de diseño), global.js (sin dependencias)
 config/       settings_schema.json + settings_data.json (colores, tipografía, layout)
 layout/       theme.liquid, password.liquid
 locales/      es.default.json (textos), es.default.schema.json (editor)
-sections/     19 secciones + header-group / footer-group
+sections/     26 secciones + header-group / footer-group
 snippets/     product-card, price, icon
 templates/    11 plantillas JSON
 ```
@@ -55,25 +57,33 @@ Ya reflejados en las plantillas:
 
 ## Qué falta
 
-1. **Instalar el tema en la tienda.** El tema activo es Horizon, el que trae Shopify
-   por defecto: nada de este repositorio está en la tienda todavía. El conector no
-   permite crear ni publicar temas, así que hay que conectarlo desde
-   *Online Store → Themes → Add theme → Connect from GitHub*, rama
-   `claude/shopify-store-connection-53vq25`.
-2. **Lanzar la tienda.** `onlineStoreUrl` sigue devolviendo null aunque el producto
-   está publicado en los tres canales, lo que apunta a que el escaparate sigue
-   protegido por contraseña. Se comprueba en *Online Store → Preferences*.
-3. **Aviso legal (LSSI).** Obligatorio en España: nombre o razón social, NIF,
-   domicilio y correo de contacto. Sin escribir por no disponer de esos datos.
-4. **Medidas del producto.** Por decisión del cliente la ficha no las lleva. Si se
-   quieren añadir, hay que medir el producto o pedir la ficha al proveedor.
-5. Reseñas: no hay bloque de reseñas, y no se pondrá ninguna inventada.
+1. **Los dos vídeos.** La landing tiene los huecos marcados y funcionando:
+   el del hero (autoplay, en bucle, sin sonido) y el demo (con controles,
+   sin autoplay para no penalizar la carga). Se suben desde el editor de temas.
+   Vertical 9:16 y comprimidos, por debajo de 5 MB.
+2. **Datos de la empresa.** Aparecen como `[PENDIENTE]` en el aviso legal, los
+   términos y el cierre de la landing: razón social, NIF y domicilio. Es
+   obligatorio (LSSI) antes de abrir al público.
+3. **Dos respuestas de la FAQ**, marcadas PENDIENTE porque no se inventan:
+   capacidad del depósito en ml y si admite lavavajillas.
+4. **Reseñas.** La sección está montada y vacía a propósito. Se rellena con
+   reseñas reales de clientas, una por bloque, desde el editor.
+5. **Publicar el tema y quitar la contraseña de la tienda** cuando esté revisado.
+
+## Estructura de la landing
+
+Hero → Problema/promesa → Cómo funciona → Beneficios → Vídeo demo → Reseñas →
+Packs → FAQ → CTA final, más la barra de compra fija en móvil.
 
 ## Ya resuelto en la tienda
 
-- Un solo producto: variantes Gris y Verde a **19,99 €, sin precio tachado**. El
-  comparativo de 40 € se retiró: sin historial de ventas, anunciar esa rebaja es
-  una práctica comercial engañosa (Directiva Omnibus / RDL 24/2021).
+- Un solo producto con dos opciones, Color y Pack, y seis variantes:
+  1 unidad 19,99 € · Pack de 2 35 € (17,50 €/u) · Pack de 3 50 € (16,67 €/u).
+  Los packs llevan precio comparativo real (2 y 3 unidades sueltas), que sí es
+  legítimo porque 19,99 € es el precio de venta actual de una unidad.
+- Páginas legales creadas y enlazadas en el footer: aviso legal, política de
+  cookies y términos y condiciones, junto a las políticas de privacidad,
+  devoluciones y envíos.
 - Siete fotos con texto alternativo, la de los dos colores como principal, y cada
   color enlazado a su variante.
 - Materiales: plástico reforzado con pulsador de dedo. Sin medidas, por decisión del cliente.
