@@ -50,33 +50,39 @@ Ya reflejados en las plantillas:
 - Envío: **5 a 12 días laborables**
 - Devoluciones: **15 días desde la recepción** (el mínimo legal en la UE son 14 desde
   que el cliente recibe el pedido, no desde que compra)
-- Producto: Dispensador de jabón con cepillo, 19,99 €, en verde y gris. **En borrador.**
+- Producto: Dispensador de jabón con cepillo, 19,99 €, en gris y verde. Publicado en
+  los canales de venta, pero el escaparate aún no es público.
 
-## Qué falta antes de publicar
+## Qué falta
 
-1. **Medidas y materiales del producto.** La ficha tiene el bloque marcado como
-   pendiente. No se han inventado: hay que medir el producto o pedir la ficha al
-   proveedor (alto, ancho, capacidad del depósito en ml, material, si admite lavavajillas).
-2. **Fotos.** El producto no tiene ninguna imagen todavía.
-3. **Precio tachado de 40 €.** Está configurado, pero la tienda no tiene historial de
-   ventas: anunciar una rebaja exige mostrar el precio más bajo de los 30 días
-   anteriores (Directiva Omnibus / RDL 24/2021). O se vende a 40 € durante 30 días,
-   o se lanza a 19,99 € sin tachar.
-4. **Pegar las políticas.** Escritas en `docs/politicas/`. No se pudieron publicar por
-   API: el conector no tiene el permiso `write_legal_policies`. Hay que pegarlas a mano
-   en *Settings → Policies*.
-5. **Aviso legal (LSSI).** Falta y es obligatorio en España: nombre o razón social,
-   NIF, domicilio y correo de contacto. No se ha escrito porque no se dispone de esos
-   datos.
-6. Reseñas: no hay bloque de reseñas, y no se pondrá ninguna inventada.
+1. **Instalar el tema en la tienda.** El tema activo es Horizon, el que trae Shopify
+   por defecto: nada de este repositorio está en la tienda todavía. El conector no
+   permite crear ni publicar temas, así que hay que conectarlo desde
+   *Online Store → Themes → Add theme → Connect from GitHub*, rama
+   `claude/shopify-store-connection-53vq25`.
+2. **Lanzar la tienda.** `onlineStoreUrl` sigue devolviendo null aunque el producto
+   está publicado en los tres canales, lo que apunta a que el escaparate sigue
+   protegido por contraseña. Se comprueba en *Online Store → Preferences*.
+3. **Aviso legal (LSSI).** Obligatorio en España: nombre o razón social, NIF,
+   domicilio y correo de contacto. Sin escribir por no disponer de esos datos.
+4. **Medidas del producto.** Por decisión del cliente la ficha no las lleva. Si se
+   quieren añadir, hay que medir el producto o pedir la ficha al proveedor.
+5. Reseñas: no hay bloque de reseñas, y no se pondrá ninguna inventada.
 
 ## Ya resuelto en la tienda
 
-- Producto en borrador con variantes Verde y Gris, 19,99 € y 40 € tachado.
+- Un solo producto: variantes Gris y Verde a **19,99 €, sin precio tachado**. El
+  comparativo de 40 € se retiró: sin historial de ventas, anunciar esa rebaja es
+  una práctica comercial engañosa (Directiva Omnibus / RDL 24/2021).
+- Siete fotos con texto alternativo, la de los dos colores como principal, y cada
+  color enlazado a su variante.
 - Materiales: plástico reforzado con pulsador de dedo. Sin medidas, por decisión del cliente.
 - Inventario **sin controlar** en ambas variantes, para que no aparezca «Agotado»
-  con plazos de envío largos.
-- Producto añadido a la colección de portada.
+  con plazos de envío de 5 a 12 días.
+- Publicado en los tres canales de venta y añadido a la colección de portada.
+- Políticas de envío y devoluciones publicadas en *Settings → Policies*.
+- Se creó un producto duplicado por el camino; el sobrante quedó **archivado**, no
+  borrado, con el handle `dispensador-borrador-antiguo`.
 
 ## Subir el tema a la tienda
 
