@@ -9,7 +9,7 @@
       <div class="product__gallery" data-product-gallery aria-label="{{ 'products.product.media_gallery' | t }}">
         {%- if product.media.size > 0 -%}
           {%- for media in product.media limit: 6 -%}
-            <div class="media media--square" data-media-id="{{ media.id }}">
+            <div class="media media--portrait" data-media-id="{{ media.id }}">
               <img
                 src="{{ media | image_url: width: 1200 }}"
                 srcset="
@@ -27,7 +27,7 @@
             </div>
           {%- endfor -%}
         {%- else -%}
-          <div class="media media--square">{{ 'product-1' | placeholder_svg_tag }}</div>
+          <div class="media media--portrait">{{ 'product-1' | placeholder_svg_tag }}</div>
         {%- endif -%}
       </div>
 

@@ -3,39 +3,89 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "eyebrow": "",
+        "image": "shopify://shop_images/Soap_dispensing_dish_brushes_side_202608171956.jpg",
+        "image_position": "left",
+        "eyebrow": "Utensilios de cocina",
         "heading": "El jabón, dentro del cepillo",
-        "subheading": "Aprietas con el pulgar y el detergente sale por las cerdas. Una mano libre y sin charco en la encimera.",
-        "button_label": "Ver el dispensador",
-        "button_link": "/products/dispensador-de-jabon-con-cepillo"
+        "subheading": "Aprietas con el pulgar y el detergente sale por las cerdas. Una mano libre, y sin el charco de siempre junto al fregadero.",
+        "button_label": "Ver el producto",
+        "button_link": "/products/dispensador-de-jabon-con-cepillo",
+        "meta": "19,99 € · Gris o verde"
       }
     },
     "trust": {
       "type": "trust-bar",
       "blocks": {
-        "b1": { "type": "item", "settings": { "icon": "truck", "title": "Envío en 5-12 días laborables", "text": "Te avisamos con el número de seguimiento" } },
+        "b1": { "type": "item", "settings": { "icon": "truck", "title": "Envío en 5-12 días laborables", "text": "Con número de seguimiento" } },
         "b2": { "type": "item", "settings": { "icon": "return", "title": "15 días para devolver", "text": "Desde que recibes el pedido" } },
-        "b3": { "type": "item", "settings": { "icon": "lock", "title": "Pago seguro" } },
-        "b4": { "type": "item", "settings": { "icon": "chat", "title": "Atención en español" } }
+        "b3": { "type": "item", "settings": { "icon": "lock", "title": "Pago seguro", "text": "Procesado por Shopify" } },
+        "b4": { "type": "item", "settings": { "icon": "chat", "title": "Atención en español", "text": "Te respondemos por correo" } }
       },
       "block_order": ["b1", "b2", "b3", "b4"],
-      "settings": { "surface": true }
+      "settings": { "surface": false }
     },
-    "featured": {
-      "type": "featured-collection",
+    "pasos": {
+      "type": "how-it-works",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/Dish_brush_soap_dispenser_2K_202608171942.jpg",
+            "title": "Llena el depósito",
+            "text": "Se abre por arriba y se llena con el mismo lavavajillas que ya usas. Al ser transparente, ves cuándo queda poco."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/Dishwashing_brush_on_marble_counter_202608171944.jpg",
+            "title": "Aprieta y friega",
+            "text": "El pulsador de dedo saca el jabón por el centro de las cerdas, justo donde estás frotando. No hay que soltar el plato."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/Soap_dispensing_dish_brush_resting_202608171953.jpg",
+            "title": "Déjalo de pie",
+            "text": "La base recoge el agua y mantiene las cerdas al aire, sin tocar la encimera y sin quedarse húmedas."
+          }
+        }
+      },
+      "block_order": ["s1", "s2", "s3"],
       "settings": {
-        "collection": "frontpage",
-        "heading": "Nuestro catálogo",
-        "products_to_show": 4,
-        "columns": "4",
-        "center": true
+        "eyebrow": "Tres pasos",
+        "heading": "Cómo funciona",
+        "surface": true
       }
     },
-    "story": {
+    "destacado": {
+      "type": "featured-product",
+      "blocks": {
+        "p1": { "type": "point", "settings": { "icon": "sparkle", "text": "Depósito transparente: ves cuándo toca rellenar" } },
+        "p2": { "type": "point", "settings": { "icon": "leaf", "text": "Plástico reforzado, con pulsador de dedo integrado" } },
+        "p3": { "type": "point", "settings": { "icon": "truck", "text": "Incluye la base con bandeja de goteo" } }
+      },
+      "block_order": ["p1", "p2", "p3"],
+      "settings": {
+        "product": "dispensador-de-jabon-con-cepillo",
+        "eyebrow": "Nuestro producto",
+        "heading": "Dispensador de jabón con cepillo",
+        "text": "<p>Para platos, vasos, sartenes, tablas de cortar y el propio fregadero. Disponible en gris y en verde.</p>",
+        "button_label": "Ver el producto",
+        "surface": false
+      }
+    },
+    "contexto": {
       "type": "image-with-text",
       "settings": {
-        "heading": "Pensado para el día a día",
-        "ratio": "square"
+        "image": "shopify://shop_images/Dish_brush_near_kitchen_sink_202608171944.jpg",
+        "ratio": "square",
+        "reverse": true,
+        "surface": true,
+        "eyebrow": "En tu cocina",
+        "heading": "Se queda donde lo necesitas",
+        "text": "<p>Al lado del grifo, de pie sobre su base. Las cerdas se secan al aire en lugar de quedarse húmedas dentro de una esponja, y la bandeja recoge el agua que gotea.</p>"
       }
     },
     "faq": {
@@ -61,18 +111,26 @@
             "question": "¿Cómo se rellena el depósito?",
             "answer": "<p>Se abre por la parte de arriba y se llena con el mismo lavavajillas líquido que ya usas. El depósito es transparente, así que ves cuándo queda poco.</p>"
           }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "¿Qué incluye el pedido?",
+            "answer": "<p>El cepillo con su depósito de jabón y la base con bandeja de goteo. Eliges color: gris o verde.</p>"
+          }
         }
       },
-      "block_order": ["q1", "q2", "q3"],
-      "settings": { "heading": "Preguntas frecuentes" }
+      "block_order": ["q1", "q2", "q3", "q4"],
+      "settings": { "heading": "Preguntas frecuentes", "surface": false }
     },
     "newsletter": {
       "type": "newsletter",
       "settings": {
         "heading": "Novedades y consejos",
+        "text": "Escríbete y te avisamos cuando saquemos producto nuevo.",
         "surface": true
       }
     }
   },
-  "order": ["hero", "trust", "featured", "story", "faq", "newsletter"]
+  "order": ["hero", "trust", "pasos", "destacado", "contexto", "faq", "newsletter"]
 }

@@ -168,7 +168,7 @@
           { "value": "portrait", "label": "t:settings.product_card.ratio_portrait" },
           { "value": "square", "label": "t:settings.product_card.ratio_square" }
         ],
-        "default": "square"
+        "default": "portrait"
       },
       {
         "type": "checkbox",

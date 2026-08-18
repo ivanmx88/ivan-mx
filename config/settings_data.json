@@ -17,7 +17,7 @@
     "type_heading_uppercase": false,
     "layout_page_width": 1360,
     "layout_corner_radius": 8,
-    "card_image_ratio": "square",
+    "card_image_ratio": "portrait",
     "card_hover_second_image": true,
     "card_show_color_swatches": true,
     "cart_free_shipping_threshold": "",

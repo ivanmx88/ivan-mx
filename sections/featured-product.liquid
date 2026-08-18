@@ -1,0 +1,103 @@
+{%- liquid
+  assign featured = section.settings.product
+  assign variant = featured.selected_or_first_available_variant
+-%}
+
+<div class="section{% if section.settings.surface %} section--surface{% endif %}">
+  <div class="page">
+    {%- if featured != blank -%}
+      <div class="spotlight">
+        <div class="spotlight__media media">
+          {%- if featured.featured_media -%}
+            <img
+              src="{{ featured.featured_media | image_url: width: 1200 }}"
+              srcset="
+                {{ featured.featured_media | image_url: width: 600 }} 600w,
+                {{ featured.featured_media | image_url: width: 1200 }} 1200w
+              "
+              sizes="(min-width: 750px) 50vw, 100vw"
+              alt="{{ featured.featured_media.alt | escape }}"
+              width="{{ featured.featured_media.preview_image.width }}"
+              height="{{ featured.featured_media.preview_image.height }}"
+              loading="lazy"
+            >
+          {%- else -%}
+            {{ 'product-1' | placeholder_svg_tag }}
+          {%- endif -%}
+        </div>
+
+        <div class="spotlight__content">
+          {%- if section.settings.eyebrow != blank -%}
+            <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+          {%- endif -%}
+
+          <h2>{{ section.settings.heading | default: featured.title }}</h2>
+
+          <div class="spotlight__price">
+            {% render 'price', product_or_variant: variant, large: true %}
+          </div>
+
+          {%- if section.settings.text != blank -%}
+            <div class="rte text-muted">{{ section.settings.text }}</div>
+          {%- endif -%}
+
+          {%- if section.blocks.size > 0 -%}
+            <ul class="spotlight__list">
+              {%- for block in section.blocks -%}
+                <li {{ block.shopify_attributes }}>
+                  {% render 'icon', name: block.settings.icon %}
+                  <span>{{ block.settings.text }}</span>
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+
+          <a class="button" href="{{ featured.url }}">
+            {{ section.settings.button_label | default: 'Ver el producto' }}
+          </a>
+        </div>
+      </div>
+    {%- else -%}
+      <p class="text-muted text-center">Elige un producto en los ajustes de esta sección.</p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Producto destacado",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Producto" },
+    { "type": "text", "id": "eyebrow", "label": "Antetítulo" },
+    { "type": "text", "id": "heading", "label": "Título", "info": "Si lo dejas vacío se usa el nombre del producto." },
+    { "type": "richtext", "id": "text", "label": "Texto" },
+    { "type": "text", "id": "button_label", "label": "Botón", "default": "Ver el producto" },
+    { "type": "checkbox", "id": "surface", "label": "Fondo secundario", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Punto",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icono",
+          "options": [
+            { "value": "sparkle", "label": "Calidad" },
+            { "value": "leaf", "label": "Materiales" },
+            { "value": "truck", "label": "Envío" },
+            { "value": "return", "label": "Devoluciones" },
+            { "value": "lock", "label": "Pago seguro" },
+            { "value": "chat", "label": "Atención al cliente" }
+          ],
+          "default": "sparkle"
+        },
+        { "type": "text", "id": "text", "label": "Texto", "default": "Beneficio concreto" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Producto destacado" }]
+}
+{% endschema %}
