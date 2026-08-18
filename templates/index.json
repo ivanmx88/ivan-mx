@@ -12,7 +12,7 @@
         "product": "dispensador-de-jabon-con-cepillo",
         "image": "shopify://shop_images/Soap_dispensing_dish_brushes_side_202608171956.jpg",
         "heading": "Friega sin volver a tocar el bote de jabón",
-        "subheading": "Un cepillo con el jabón dentro. Aprietas el botón, sale la dosis justa por el centro de las cerdas y friegas.",
+        "subheading": "Un cepillo con el jabón dentro. Aprietas el botón, sale la dosis justa por el centro de las escobillas y friegas.",
         "button_label": "Comprar ahora"
       }
     },
@@ -26,7 +26,7 @@
         "y1": { "type": "solution", "settings": { "text": "El jabón va dentro: una mano libre, sin soltar el plato" } },
         "y2": { "type": "solution", "settings": { "text": "Sale la dosis justa, solo cuando aprietas" } },
         "y3": { "type": "solution", "settings": { "text": "Se queda de pie en su base, que recoge el agua" } },
-        "y4": { "type": "solution", "settings": { "text": "Las cerdas se secan al aire, no dentro de una esponja" } }
+        "y4": { "type": "solution", "settings": { "text": "Las escobillas se secan al aire, no dentro de una esponja" } }
       },
       "block_order": ["x1", "x2", "x3", "x4", "y1", "y2", "y3", "y4"],
       "settings": {
@@ -55,7 +55,7 @@
           "settings": {
             "image": "shopify://shop_images/Dishwashing_brush_on_marble_counter_202608171944.jpg",
             "title": "Aprieta el botón",
-            "text": "El pulsador de dedo saca el jabón por el centro de las cerdas, justo donde vas a frotar."
+            "text": "El pulsador de dedo saca el jabón por el centro de las escobillas, justo donde vas a frotar."
           }
         },
         "s3": {
@@ -63,7 +63,7 @@
           "settings": {
             "image": "shopify://shop_images/Soap_dispensing_dish_brush_resting_202608171953.jpg",
             "title": "Friega",
-            "text": "Sin botes y sin líos. Al terminar, lo dejas de pie en su base y las cerdas se secan al aire."
+            "text": "Sin botes y sin líos. Al terminar, lo dejas de pie en su base y las escobillas se secan al aire."
           }
         }
       },
@@ -152,7 +152,7 @@
           "type": "question",
           "settings": {
             "question": "¿Vale cualquier jabón?",
-            "answer": "<p>Está pensado para lavavajillas líquido, del que se usa a diario. Con jabones muy espesos o en gel puede costar más que baje hasta las cerdas.</p>"
+            "answer": "<p>Está pensado para lavavajillas líquido, del que se usa a diario. Con jabones muy espesos o en gel puede costar más que baje hasta las escobillas.</p>"
           }
         },
         "q2": {
