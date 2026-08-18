@@ -1,0 +1,54 @@
+<div class="section{% if section.settings.surface %} section--surface{% endif %}">
+  <div class="page page--narrow finalcta">
+    <h2>{{ section.settings.heading }}</h2>
+    {%- if section.settings.subheading != blank -%}
+      <p class="text-muted stack">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+
+    <div class="finalcta__actions">
+      <a class="button" href="{{ section.settings.button_link | default: '#comprar' }}">
+        {{ section.settings.button_label }}
+      </a>
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <ul class="finalcta__info">
+        {%- for block in section.blocks -%}
+          <li {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    {%- if section.settings.company != blank -%}
+      <div class="finalcta__company rte">{{ section.settings.company }}</div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CTA final",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Título", "default": "Deja de pelearte con el bote de jabón" },
+    { "type": "text", "id": "subheading", "label": "Subtítulo" },
+    { "type": "text", "id": "button_label", "label": "Botón", "default": "Comprar ahora" },
+    { "type": "url", "id": "button_link", "label": "Enlace del botón" },
+    { "type": "checkbox", "id": "surface", "label": "Fondo secundario", "default": true },
+    {
+      "type": "richtext",
+      "id": "company",
+      "label": "Datos de la empresa",
+      "info": "Obligatorio en España (LSSI): razón social, NIF, domicilio y correo de contacto."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "info",
+      "name": "Línea de información",
+      "limit": 4,
+      "settings": [{ "type": "text", "id": "text", "label": "Texto", "default": "Envío en 5-12 días laborables" }]
+    }
+  ],
+  "presets": [{ "name": "CTA final" }]
+}
+{% endschema %}

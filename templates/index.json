@@ -1,28 +1,43 @@
 {
   "sections": {
     "hero": {
-      "type": "hero",
+      "type": "landing-hero",
+      "blocks": {
+        "t1": { "type": "item", "settings": { "icon": "truck", "text": "Envío 5-12 días laborables" } },
+        "t2": { "type": "item", "settings": { "icon": "return", "text": "15 días para devolver" } },
+        "t3": { "type": "item", "settings": { "icon": "lock", "text": "Pago seguro" } }
+      },
+      "block_order": ["t1", "t2", "t3"],
       "settings": {
+        "product": "dispensador-de-jabon-con-cepillo",
         "image": "shopify://shop_images/Soap_dispensing_dish_brushes_side_202608171956.jpg",
-        "image_position": "left",
-        "eyebrow": "Utensilios de cocina",
-        "heading": "El jabón, dentro del cepillo",
-        "subheading": "Aprietas con el pulgar y el detergente sale por las cerdas. Una mano libre, y sin el charco de siempre junto al fregadero.",
-        "button_label": "Ver el producto",
-        "button_link": "/products/dispensador-de-jabon-con-cepillo",
-        "meta": "19,99 € · Gris o verde"
+        "heading": "Friega sin volver a tocar el bote de jabón",
+        "subheading": "Un cepillo con el jabón dentro. Aprietas el botón, sale la dosis justa por el centro de las cerdas y friegas.",
+        "button_label": "Comprar ahora"
       }
     },
-    "trust": {
-      "type": "trust-bar",
+    "promesa": {
+      "type": "problem-promise",
       "blocks": {
-        "b1": { "type": "item", "settings": { "icon": "truck", "title": "Envío en 5-12 días laborables", "text": "Con número de seguimiento" } },
-        "b2": { "type": "item", "settings": { "icon": "return", "title": "15 días para devolver", "text": "Desde que recibes el pedido" } },
-        "b3": { "type": "item", "settings": { "icon": "lock", "title": "Pago seguro", "text": "Procesado por Shopify" } },
-        "b4": { "type": "item", "settings": { "icon": "chat", "title": "Atención en español", "text": "Te respondemos por correo" } }
+        "x1": { "type": "problem", "settings": { "text": "Coger el bote con las manos mojadas y llenas de espuma" } },
+        "x2": { "type": "problem", "settings": { "text": "Echar de más y desperdiciar jabón en cada plato" } },
+        "x3": { "type": "problem", "settings": { "text": "El bote pringoso y el charco al lado del fregadero" } },
+        "x4": { "type": "problem", "settings": { "text": "La esponja húmeda que acaba oliendo" } },
+        "y1": { "type": "solution", "settings": { "text": "El jabón va dentro: una mano libre, sin soltar el plato" } },
+        "y2": { "type": "solution", "settings": { "text": "Sale la dosis justa, solo cuando aprietas" } },
+        "y3": { "type": "solution", "settings": { "text": "Se queda de pie en su base, que recoge el agua" } },
+        "y4": { "type": "solution", "settings": { "text": "Las cerdas se secan al aire, no dentro de una esponja" } }
       },
-      "block_order": ["b1", "b2", "b3", "b4"],
-      "settings": { "surface": false }
+      "block_order": ["x1", "x2", "x3", "x4", "y1", "y2", "y3", "y4"],
+      "settings": {
+        "heading": "Fregar no debería ser tan pesado",
+        "subheading": "El problema no es el cepillo. Es todo lo que hay alrededor del bote de jabón.",
+        "problem_label": "Antes",
+        "problem_heading": "Con el bote de jabón",
+        "solution_label": "Con Aurea",
+        "solution_heading": "Todo en uno",
+        "surface": false
+      }
     },
     "pasos": {
       "type": "how-it-works",
@@ -32,60 +47,102 @@
           "settings": {
             "image": "shopify://shop_images/Dish_brush_soap_dispenser_2K_202608171942.jpg",
             "title": "Llena el depósito",
-            "text": "Se abre por arriba y se llena con el mismo lavavajillas que ya usas. Al ser transparente, ves cuándo queda poco."
+            "text": "Se abre por arriba y se llena con el mismo lavavajillas líquido que ya usas. Al ser transparente, ves cuándo queda poco."
           }
         },
         "s2": {
           "type": "step",
           "settings": {
             "image": "shopify://shop_images/Dishwashing_brush_on_marble_counter_202608171944.jpg",
-            "title": "Aprieta y friega",
-            "text": "El pulsador de dedo saca el jabón por el centro de las cerdas, justo donde estás frotando. No hay que soltar el plato."
+            "title": "Aprieta el botón",
+            "text": "El pulsador de dedo saca el jabón por el centro de las cerdas, justo donde vas a frotar."
           }
         },
         "s3": {
           "type": "step",
           "settings": {
             "image": "shopify://shop_images/Soap_dispensing_dish_brush_resting_202608171953.jpg",
-            "title": "Déjalo de pie",
-            "text": "La base recoge el agua y mantiene las cerdas al aire, sin tocar la encimera y sin quedarse húmedas."
+            "title": "Friega",
+            "text": "Sin botes y sin líos. Al terminar, lo dejas de pie en su base y las cerdas se secan al aire."
           }
         }
       },
       "block_order": ["s1", "s2", "s3"],
+      "settings": { "eyebrow": "Tres pasos", "heading": "Cómo funciona", "surface": true }
+    },
+    "beneficios": {
+      "type": "benefits",
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "icon": "sparkle", "title": "Todo en uno", "text": "Cepillo y jabón en el mismo gesto. Se acabó ir a por el bote." } },
+        "b2": { "type": "benefit", "settings": { "icon": "drop", "title": "La dosis justa", "text": "Sale solo cuando aprietas, y solo lo que necesitas. Menos jabón gastado." } },
+        "b3": { "type": "benefit", "settings": { "icon": "hand", "title": "Manos limpias", "text": "No tocas el bote con las manos pringadas ni lo dejas resbaladizo." } },
+        "b4": { "type": "benefit", "settings": { "icon": "box", "title": "Recogido y bonito", "text": "Se queda de pie en su base con bandeja, sin charco en la encimera." } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4"],
+      "settings": { "heading": "Por qué gusta tanto", "surface": false }
+    },
+    "demo": {
+      "type": "video-demo",
       "settings": {
-        "eyebrow": "Tres pasos",
-        "heading": "Cómo funciona",
+        "eyebrow": "En vídeo",
+        "heading": "Míralo en acción",
+        "subheading": "De plato sucio a plato limpio, sin tocar el bote.",
+        "button_label": "Comprar ahora",
         "surface": true
       }
     },
-    "destacado": {
-      "type": "featured-product",
+    "resenas": {
+      "type": "reviews",
+      "settings": {
+        "heading": "Lo que dicen quienes ya lo usan",
+        "surface": false
+      }
+    },
+    "packs": {
+      "type": "offer-packs",
       "blocks": {
-        "p1": { "type": "point", "settings": { "icon": "sparkle", "text": "Depósito transparente: ves cuándo toca rellenar" } },
-        "p2": { "type": "point", "settings": { "icon": "leaf", "text": "Plástico reforzado, con pulsador de dedo integrado" } },
-        "p3": { "type": "point", "settings": { "icon": "truck", "text": "Incluye la base con bandeja de goteo" } }
+        "p1": {
+          "type": "pack",
+          "settings": {
+            "title": "1 unidad",
+            "option_value": "1 unidad",
+            "units": 1,
+            "featured": false,
+            "features": "1 cepillo con depósito\n1 base con bandeja\nColor a elegir"
+          }
+        },
+        "p2": {
+          "type": "pack",
+          "settings": {
+            "title": "Pack de 2",
+            "option_value": "Pack de 2",
+            "units": 2,
+            "badge": "El más elegido",
+            "featured": true,
+            "features": "2 cepillos con depósito\n2 bases con bandeja\nUno para el fregadero y otro de recambio"
+          }
+        },
+        "p3": {
+          "type": "pack",
+          "settings": {
+            "title": "Pack de 3",
+            "option_value": "Pack de 3",
+            "units": 3,
+            "badge": "Mejor precio por unidad",
+            "featured": false,
+            "features": "3 cepillos con depósito\n3 bases con bandeja\nPara casa, cocina de verano o regalar"
+          }
+        }
       },
       "block_order": ["p1", "p2", "p3"],
       "settings": {
         "product": "dispensador-de-jabon-con-cepillo",
-        "eyebrow": "Nuestro producto",
-        "heading": "Dispensador de jabón con cepillo",
-        "text": "<p>Para platos, vasos, sartenes, tablas de cortar y el propio fregadero. Disponible en gris y en verde.</p>",
-        "button_label": "Ver el producto",
-        "surface": false
-      }
-    },
-    "contexto": {
-      "type": "image-with-text",
-      "settings": {
-        "image": "shopify://shop_images/Dish_brush_near_kitchen_sink_202608171944.jpg",
-        "ratio": "square",
-        "reverse": true,
-        "surface": true,
-        "eyebrow": "En tu cocina",
-        "heading": "Se queda donde lo necesitas",
-        "text": "<p>Al lado del grifo, de pie sobre su base. Las cerdas se secan al aire en lugar de quedarse húmedas dentro de una esponja, y la bandeja recoge el agua que gotea.</p>"
+        "pack_option": "Pack",
+        "heading": "Elige tu pack",
+        "subheading": "Cuantas más unidades, más barato sale cada una.",
+        "button_label": "Comprar ahora",
+        "note": "Impuestos incluidos. Los gastos de envío se calculan en el checkout.",
+        "surface": true
       }
     },
     "faq": {
@@ -94,43 +151,66 @@
         "q1": {
           "type": "question",
           "settings": {
-            "question": "¿Cuánto tarda en llegar?",
-            "answer": "<p>Entre 5 y 12 días laborables. En cuanto sale el paquete te enviamos el número de seguimiento por correo para que puedas ver dónde está.</p>"
+            "question": "¿Vale cualquier jabón?",
+            "answer": "<p>Está pensado para lavavajillas líquido, del que se usa a diario. Con jabones muy espesos o en gel puede costar más que baje hasta las cerdas.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
-            "question": "¿Puedo devolverlo si no me convence?",
-            "answer": "<p>Sí. Tienes 15 días desde que recibes el pedido para devolverlo. Escríbenos y te decimos cómo hacerlo.</p>"
+            "question": "¿Se puede lavar?",
+            "answer": "<p>El cabezal se aclara bajo el grifo y la base se limpia con agua y jabón. <strong>PENDIENTE:</strong> confirmar con el proveedor si admite lavavajillas antes de publicar.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
-            "question": "¿Cómo se rellena el depósito?",
-            "answer": "<p>Se abre por la parte de arriba y se llena con el mismo lavavajillas líquido que ya usas. El depósito es transparente, así que ves cuándo queda poco.</p>"
+            "question": "¿Cuánto jabón cabe?",
+            "answer": "<p><strong>PENDIENTE:</strong> falta medir la capacidad del depósito en ml. No se rellena hasta tener el dato real.</p>"
           }
         },
         "q4": {
           "type": "question",
           "settings": {
-            "question": "¿Qué incluye el pedido?",
-            "answer": "<p>El cepillo con su depósito de jabón y la base con bandeja de goteo. Eliges color: gris o verde.</p>"
+            "question": "¿Cuánto tarda el envío?",
+            "answer": "<p>Entre 5 y 12 días laborables. En cuanto sale el paquete te enviamos el número de seguimiento por correo.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "¿Puedo devolverlo?",
+            "answer": "<p>Sí. Tienes 15 días desde que recibes el pedido para devolverlo, sin dar explicaciones. Escríbenos y te decimos cómo.</p>"
           }
         }
       },
-      "block_order": ["q1", "q2", "q3", "q4"],
+      "block_order": ["q1", "q2", "q3", "q4", "q5"],
       "settings": { "heading": "Preguntas frecuentes", "surface": false }
     },
-    "newsletter": {
-      "type": "newsletter",
+    "cierre": {
+      "type": "final-cta",
+      "blocks": {
+        "i1": { "type": "info", "settings": { "text": "Envío en 5-12 días laborables con seguimiento" } },
+        "i2": { "type": "info", "settings": { "text": "15 días para devolver desde que lo recibes" } },
+        "i3": { "type": "info", "settings": { "text": "Pago seguro procesado por Shopify" } }
+      },
+      "block_order": ["i1", "i2", "i3"],
       "settings": {
-        "heading": "Novedades y consejos",
-        "text": "Escríbete y te avisamos cuando saquemos producto nuevo.",
+        "heading": "Deja de pelearte con el bote de jabón",
+        "subheading": "Un gesto menos cada vez que friegas.",
+        "button_label": "Comprar ahora",
+        "company": "<p><strong>PENDIENTE — datos de la empresa (obligatorio, LSSI):</strong><br>Razón social · NIF · Domicilio · Correo de contacto</p>",
         "surface": true
+      }
+    },
+    "barra": {
+      "type": "buy-bar",
+      "settings": {
+        "product": "dispensador-de-jabon-con-cepillo",
+        "label": "Dispensador con cepillo",
+        "button_label": "Comprar ahora"
       }
     }
   },
-  "order": ["hero", "trust", "pasos", "destacado", "contexto", "faq", "newsletter"]
+  "order": ["hero", "promesa", "pasos", "beneficios", "demo", "resenas", "packs", "faq", "cierre", "barra"]
 }

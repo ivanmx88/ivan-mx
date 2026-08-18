@@ -1,0 +1,66 @@
+{%- comment -%}
+  Reseñas. Vacío a propósito hasta que haya clientas reales.
+  Cada reseña se añade como un bloque desde el editor de temas.
+{%- endcomment -%}
+
+<div class="section{% if section.settings.surface %} section--surface{% endif %}">
+  <div class="page">
+    <div class="section__header section__header--center">
+      <h2>{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="text-muted stack">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="reviews">
+        {%- for block in section.blocks -%}
+          <figure class="review" {{ block.shopify_attributes }}>
+            {%- if block.settings.stars > 0 -%}
+              <div class="review__stars" aria-label="{{ block.settings.stars }} de 5">
+                {%- for i in (1..block.settings.stars) -%}★{%- endfor -%}
+              </div>
+            {%- endif -%}
+            <blockquote class="review__text">{{ block.settings.text }}</blockquote>
+            <figcaption class="review__author">{{ block.settings.author }}</figcaption>
+          </figure>
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <div class="reviews__empty">
+        <p><strong>Sección preparada, sin reseñas todavía.</strong></p>
+        <p class="text-sm stack">
+          Se rellena con reseñas reales de clientas desde el editor de temas, una por bloque.
+          Hasta que haya pedidos reales, esta sección se queda oculta.
+        </p>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Reseñas",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Título", "default": "Lo que dicen quienes ya lo usan" },
+    { "type": "text", "id": "subheading", "label": "Subtítulo" },
+    { "type": "checkbox", "id": "surface", "label": "Fondo secundario", "default": false },
+    {
+      "type": "paragraph",
+      "content": "Solo reseñas reales de clientas. Nunca inventadas: además de ser publicidad engañosa, se nota."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Reseña",
+      "settings": [
+        { "type": "range", "id": "stars", "min": 1, "max": 5, "step": 1, "label": "Estrellas", "default": 5 },
+        { "type": "textarea", "id": "text", "label": "Texto de la reseña" },
+        { "type": "text", "id": "author", "label": "Nombre de la clienta" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Reseñas" }]
+}
+{% endschema %}

@@ -188,6 +188,25 @@
     });
   }
 
+  /* --- Barra de compra fija (landing) -------------------------------------- */
+
+  function initBuyBar() {
+    var bar = document.querySelector('[data-buybar]');
+    var hero = document.querySelector('.lhero');
+    if (!bar || !hero || !('IntersectionObserver' in window)) return;
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          bar.classList.toggle('is-visible', !entry.isIntersecting);
+        });
+      },
+      { rootMargin: '-120px 0px 0px 0px' }
+    );
+
+    observer.observe(hero);
+  }
+
   /* --- Boot ---------------------------------------------------------------- */
 
   function init() {
@@ -195,6 +214,7 @@
     initStickyAtc();
     initQuantity();
     initVariantPickers();
+    initBuyBar();
   }
 
   if (document.readyState === 'loading') {
