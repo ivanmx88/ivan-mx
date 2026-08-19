@@ -155,8 +155,19 @@
         gallery.prepend(target);
       }
 
+      // "Color: Gris" junto a la etiqueta, para que se lea sin mirar la muestra.
+      function updateOptionLabels() {
+        picker.querySelectorAll('[data-option-index]').forEach(function (group) {
+          var checked = group.querySelector('input:checked');
+          var display = group.querySelector('[data-option-display]');
+          if (checked && display) display.textContent = checked.value;
+        });
+      }
+
       function update() {
         var variant = matchVariant(selectedOptions());
+
+        updateOptionLabels();
 
         if (variant && idInput) idInput.value = variant.id;
 
