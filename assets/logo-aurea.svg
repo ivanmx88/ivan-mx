@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" width="600" height="120" role="img" aria-label="Aurea">
+  <circle cx="20" cy="20" r="17.8" fill="none" stroke="#1D2321" stroke-width="2"/>
+  <path d="M20 10.2c3.9 4.5 6.1 7.9 6.1 10.9a6.1 6.1 0 0 1-12.2 0c0-3 2.2-6.4 6.1-10.9Z" fill="#7FA93F"/>
+  <text x="48" y="27" font-family="Assistant, Helvetica, Arial, sans-serif" font-size="19" font-weight="700"
+        letter-spacing="3.4" fill="#1D2321">AUREA</text>
+</svg>

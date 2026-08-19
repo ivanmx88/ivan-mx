@@ -1,0 +1,15 @@
+{%- comment -%}
+  Marca de Aurea: el sello (aro + gota) más el nombre.
+  El aro usa currentColor, así que se invierte solo sobre fondo oscuro.
+{%- endcomment -%}
+
+<span class="logo">
+  <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+    <circle cx="16" cy="16" r="14.2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+    <path
+      d="M16 8.2c3.1 3.6 4.9 6.3 4.9 8.7a4.9 4.9 0 0 1-9.8 0c0-2.4 1.8-5.1 4.9-8.7Z"
+      fill="var(--color-accent)"
+    />
+  </svg>
+  <span class="logo__word">{{ settings.logo_wordmark | default: shop.name }}</span>
+</span>

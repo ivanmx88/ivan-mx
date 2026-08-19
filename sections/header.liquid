@@ -31,7 +31,7 @@
               style="width: {{ settings.logo_width }}px;"
             >
           {%- else -%}
-            {{ settings.logo_wordmark | default: shop.name }}
+            {% render 'logo' %}
           {%- endif -%}
         </a>
       {%- if request.page_type == 'index' -%}

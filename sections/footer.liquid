@@ -2,7 +2,7 @@
   <div class="page">
     <div class="footer__grid">
       <div>
-        <div class="footer__heading">{{ settings.logo_wordmark | default: shop.name }}</div>
+        <div class="footer__brand">{% render 'logo' %}</div>
         {%- if section.settings.about != blank -%}
           <div class="rte text-sm text-muted">{{ section.settings.about }}</div>
         {%- endif -%}
