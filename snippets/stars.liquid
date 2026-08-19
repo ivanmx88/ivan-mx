@@ -1,0 +1,32 @@
+{%- comment -%}
+  Estrellas de una valoración real.
+  Acepta:
+    - rating: {Number} media, por ejemplo 4.5
+    - count:  {Number} número de reseñas
+    - link:   {Boolean} si enlaza al listado de reseñas
+
+  Si no hay reseñas no pinta nada: nunca se muestran estrellas vacías
+  ni valoraciones inventadas.
+{%- endcomment -%}
+
+{%- if count > 0 -%}
+  {%- assign percent = rating | times: 20.0 -%}
+
+  {%- if link -%}<a class="stars-line" href="#resenas">{%- else -%}<span class="stars-line">{%- endif -%}
+    <span
+      class="stars"
+      role="img"
+      aria-label="{{ rating | round: 1 }} de 5 estrellas, {{ count }} reseñas"
+    >
+      <span class="stars__base" aria-hidden="true">
+        {%- for i in (1..5) -%}{% render 'icon', name: 'star' %}{%- endfor -%}
+      </span>
+      <span class="stars__fill" style="width: {{ percent }}%;" aria-hidden="true">
+        {%- for i in (1..5) -%}{% render 'icon', name: 'star' %}{%- endfor -%}
+      </span>
+    </span>
+    <span class="stars-line__count">
+      {{ count }} {% if count == 1 %}reseña{% else %}reseñas{% endif %}
+    </span>
+  {%- if link -%}</a>{%- else -%}</span>{%- endif -%}
+{%- endif -%}
