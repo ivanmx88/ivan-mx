@@ -103,9 +103,35 @@
       var addLabel = picker.getAttribute('data-add-label') || 'Añadir al carrito';
       var unavailableLabel = picker.getAttribute('data-unavailable-label') || 'No disponible';
 
+      // Shopify tiene varios marcadores de importe según el país. Hay que
+      // soportarlos todos: en España el formato es {{amount_with_comma_separator}}.
       function formatMoney(cents) {
-        var amount = (cents / 100).toFixed(2).replace('.', ',');
-        return moneyFormat.replace(/\{\{\s*amount\s*\}\}/, amount);
+        var value = cents / 100;
+
+        function group(decimals, thousandsSep, decimalSep) {
+          var parts = value.toFixed(decimals).split('.');
+          var whole = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, thousandsSep);
+          return parts[1] ? whole + decimalSep + parts[1] : whole;
+        }
+
+        return moneyFormat.replace(/\{\{\s*(\w+)\s*\}\}/, function (match, name) {
+          switch (name) {
+            case 'amount_no_decimals':
+              return group(0, ',', '.');
+            case 'amount_with_comma_separator':
+              return group(2, '.', ',');
+            case 'amount_no_decimals_with_comma_separator':
+              return group(0, '.', ',');
+            case 'amount_with_apostrophe_separator':
+              return group(2, "'", '.');
+            case 'amount_with_space_separator':
+              return group(2, ' ', ',');
+            case 'amount_no_decimals_with_space_separator':
+              return group(0, ' ', ',');
+            default:
+              return group(2, ',', '.');
+          }
+        });
       }
 
       function selectedOptions() {
