@@ -3,32 +3,104 @@
     "hero": {
       "type": "landing-hero",
       "blocks": {
-        "t1": { "type": "item", "settings": { "icon": "truck", "text": "Envío 5-12 días laborables" } },
-        "t2": { "type": "item", "settings": { "icon": "return", "text": "15 días para devolver" } },
-        "t3": { "type": "item", "settings": { "icon": "lock", "text": "Pago seguro" } }
+        "t1": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "text": "Envío 5-12 días laborables"
+          }
+        },
+        "t2": {
+          "type": "item",
+          "settings": {
+            "icon": "return",
+            "text": "15 días para devolver"
+          }
+        },
+        "t3": {
+          "type": "item",
+          "settings": {
+            "icon": "lock",
+            "text": "Pago seguro"
+          }
+        }
       },
-      "block_order": ["t1", "t2", "t3"],
+      "block_order": [
+        "t1",
+        "t2",
+        "t3"
+      ],
       "settings": {
         "product": "dispensador-de-jabon-con-cepillo",
         "image": "shopify://shop_images/Soap_dispensing_dish_brushes_side_202608171956.jpg",
         "heading": "Friega sin volver a tocar el bote de jabón",
         "subheading": "Un cepillo con el jabón dentro. Aprietas el botón, sale la dosis justa por el centro de las escobillas y friegas.",
-        "button_label": "Comprar ahora"
+        "button_label": "Comprar ahora",
+        "button_link": "/products/dispensador-de-jabon-con-cepillo"
       }
     },
     "promesa": {
       "type": "problem-promise",
       "blocks": {
-        "x1": { "type": "problem", "settings": { "text": "Coger el bote con las manos mojadas y llenas de espuma" } },
-        "x2": { "type": "problem", "settings": { "text": "Echar de más y desperdiciar jabón en cada plato" } },
-        "x3": { "type": "problem", "settings": { "text": "El bote pringoso y el charco al lado del fregadero" } },
-        "x4": { "type": "problem", "settings": { "text": "La esponja húmeda que acaba oliendo" } },
-        "y1": { "type": "solution", "settings": { "text": "El jabón va dentro: una mano libre, sin soltar el plato" } },
-        "y2": { "type": "solution", "settings": { "text": "Sale la dosis justa, solo cuando aprietas" } },
-        "y3": { "type": "solution", "settings": { "text": "Se queda de pie en su base, que recoge el agua" } },
-        "y4": { "type": "solution", "settings": { "text": "Las escobillas se secan al aire, no dentro de una esponja" } }
+        "x1": {
+          "type": "problem",
+          "settings": {
+            "text": "Coger el bote con las manos mojadas y llenas de espuma"
+          }
+        },
+        "x2": {
+          "type": "problem",
+          "settings": {
+            "text": "Echar de más y desperdiciar jabón en cada plato"
+          }
+        },
+        "x3": {
+          "type": "problem",
+          "settings": {
+            "text": "El bote pringoso y el charco al lado del fregadero"
+          }
+        },
+        "x4": {
+          "type": "problem",
+          "settings": {
+            "text": "La esponja húmeda que acaba oliendo"
+          }
+        },
+        "y1": {
+          "type": "solution",
+          "settings": {
+            "text": "El jabón va dentro: una mano libre, sin soltar el plato"
+          }
+        },
+        "y2": {
+          "type": "solution",
+          "settings": {
+            "text": "Sale la dosis justa, solo cuando aprietas"
+          }
+        },
+        "y3": {
+          "type": "solution",
+          "settings": {
+            "text": "Se queda de pie en su base, que recoge el agua"
+          }
+        },
+        "y4": {
+          "type": "solution",
+          "settings": {
+            "text": "Las escobillas se secan al aire, no dentro de una esponja"
+          }
+        }
       },
-      "block_order": ["x1", "x2", "x3", "x4", "y1", "y2", "y3", "y4"],
+      "block_order": [
+        "x1",
+        "x2",
+        "x3",
+        "x4",
+        "y1",
+        "y2",
+        "y3",
+        "y4"
+      ],
       "settings": {
         "heading": "Fregar no debería ser tan pesado",
         "subheading": "El problema no es el cepillo. Es todo lo que hay alrededor del bote de jabón.",
@@ -67,19 +139,63 @@
           }
         }
       },
-      "block_order": ["s1", "s2", "s3"],
-      "settings": { "eyebrow": "Tres pasos", "heading": "Cómo funciona", "surface": true }
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "eyebrow": "Tres pasos",
+        "heading": "Cómo funciona",
+        "surface": true
+      }
     },
     "beneficios": {
       "type": "benefits",
       "blocks": {
-        "b1": { "type": "benefit", "settings": { "icon": "sparkle", "title": "Todo en uno", "text": "Cepillo y jabón en el mismo gesto. Se acabó ir a por el bote." } },
-        "b2": { "type": "benefit", "settings": { "icon": "drop", "title": "La dosis justa", "text": "Sale solo cuando aprietas, y solo lo que necesitas. Menos jabón gastado." } },
-        "b3": { "type": "benefit", "settings": { "icon": "hand", "title": "Manos limpias", "text": "No tocas el bote con las manos pringadas ni lo dejas resbaladizo." } },
-        "b4": { "type": "benefit", "settings": { "icon": "box", "title": "Recogido y bonito", "text": "Se queda de pie en su base con bandeja, sin charco en la encimera." } }
+        "b1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "sparkle",
+            "title": "Todo en uno",
+            "text": "Cepillo y jabón en el mismo gesto. Se acabó ir a por el bote."
+          }
+        },
+        "b2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "drop",
+            "title": "La dosis justa",
+            "text": "Sale solo cuando aprietas, y solo lo que necesitas. Menos jabón gastado."
+          }
+        },
+        "b3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "hand",
+            "title": "Manos limpias",
+            "text": "No tocas el bote con las manos pringadas ni lo dejas resbaladizo."
+          }
+        },
+        "b4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "box",
+            "title": "Recogido y bonito",
+            "text": "Se queda de pie en su base con bandeja, sin charco en la encimera."
+          }
+        }
       },
-      "block_order": ["b1", "b2", "b3", "b4"],
-      "settings": { "heading": "Por qué gusta tanto", "surface": false }
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "settings": {
+        "heading": "Por qué gusta tanto",
+        "surface": false
+      }
     },
     "demo": {
       "type": "video-demo",
@@ -88,7 +204,8 @@
         "heading": "Míralo en acción",
         "subheading": "De plato sucio a plato limpio, sin tocar el bote.",
         "button_label": "Comprar ahora",
-        "surface": true
+        "surface": true,
+        "button_link": "/products/dispensador-de-jabon-con-cepillo"
       }
     },
     "resenas": {
@@ -96,53 +213,6 @@
       "settings": {
         "heading": "Lo que dicen quienes ya lo usan",
         "surface": false
-      }
-    },
-    "packs": {
-      "type": "offer-packs",
-      "blocks": {
-        "p1": {
-          "type": "pack",
-          "settings": {
-            "title": "1 unidad",
-            "option_value": "1 unidad",
-            "units": 1,
-            "featured": false,
-            "features": "1 cepillo con depósito\n1 base con bandeja\nColor a elegir"
-          }
-        },
-        "p2": {
-          "type": "pack",
-          "settings": {
-            "title": "Pack de 2",
-            "option_value": "Pack de 2",
-            "units": 2,
-            "badge": "El más elegido",
-            "featured": true,
-            "features": "2 cepillos con depósito\n2 bases con bandeja\nUno para el fregadero y otro de recambio"
-          }
-        },
-        "p3": {
-          "type": "pack",
-          "settings": {
-            "title": "Pack de 3",
-            "option_value": "Pack de 3",
-            "units": 3,
-            "badge": "Mejor precio por unidad",
-            "featured": false,
-            "features": "3 cepillos con depósito\n3 bases con bandeja\nPara casa, cocina de verano o regalar"
-          }
-        }
-      },
-      "block_order": ["p1", "p2", "p3"],
-      "settings": {
-        "product": "dispensador-de-jabon-con-cepillo",
-        "pack_option": "Pack",
-        "heading": "Elige tu pack",
-        "subheading": "Cuantas más unidades, más barato sale cada una.",
-        "button_label": "Comprar ahora",
-        "note": "Impuestos incluidos. Los gastos de envío se calculan en el checkout.",
-        "surface": true
       }
     },
     "faq": {
@@ -184,23 +254,52 @@
           }
         }
       },
-      "block_order": ["q1", "q2", "q3", "q4", "q5"],
-      "settings": { "heading": "Preguntas frecuentes", "surface": false }
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "settings": {
+        "heading": "Preguntas frecuentes",
+        "surface": false
+      }
     },
     "cierre": {
       "type": "final-cta",
       "blocks": {
-        "i1": { "type": "info", "settings": { "text": "Envío en 5-12 días laborables con seguimiento" } },
-        "i2": { "type": "info", "settings": { "text": "15 días para devolver desde que lo recibes" } },
-        "i3": { "type": "info", "settings": { "text": "Pago seguro procesado por Shopify" } }
+        "i1": {
+          "type": "info",
+          "settings": {
+            "text": "Envío en 5-12 días laborables con seguimiento"
+          }
+        },
+        "i2": {
+          "type": "info",
+          "settings": {
+            "text": "15 días para devolver desde que lo recibes"
+          }
+        },
+        "i3": {
+          "type": "info",
+          "settings": {
+            "text": "Pago seguro procesado por Shopify"
+          }
+        }
       },
-      "block_order": ["i1", "i2", "i3"],
+      "block_order": [
+        "i1",
+        "i2",
+        "i3"
+      ],
       "settings": {
         "heading": "Deja de pelearte con el bote de jabón",
-        "subheading": "Un gesto menos cada vez que friegas.",
+        "subheading": "Elige color y pack en la página del producto.",
         "button_label": "Comprar ahora",
         "company": "<p><strong>PENDIENTE — datos de la empresa (obligatorio, LSSI):</strong><br>Razón social · NIF · Domicilio · Correo de contacto</p>",
-        "surface": true
+        "surface": true,
+        "button_link": "/products/dispensador-de-jabon-con-cepillo"
       }
     },
     "barra": {
@@ -208,9 +307,20 @@
       "settings": {
         "product": "dispensador-de-jabon-con-cepillo",
         "label": "Dispensador con cepillo",
-        "button_label": "Comprar ahora"
+        "button_label": "Comprar ahora",
+        "button_link": "/products/dispensador-de-jabon-con-cepillo"
       }
     }
   },
-  "order": ["hero", "promesa", "pasos", "beneficios", "demo", "resenas", "packs", "faq", "cierre", "barra"]
+  "order": [
+    "hero",
+    "promesa",
+    "pasos",
+    "beneficios",
+    "demo",
+    "resenas",
+    "faq",
+    "cierre",
+    "barra"
+  ]
 }

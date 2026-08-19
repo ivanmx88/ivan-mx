@@ -48,11 +48,13 @@
       {%- endif -%}
 
       <div class="lhero__buy">
-        <a class="button" href="{{ section.settings.button_link | default: '#comprar' }}">
+        <a class="button" href="{{ section.settings.button_link | default: lp.url }}">
           {{ section.settings.button_label }}
         </a>
         {%- if lp != blank -%}
-          <span class="lhero__price">{{ lv.price | money }}</span>
+          <span class="lhero__price">
+            {%- if lp.price_varies -%}Desde {{ lp.price_min | money }}{%- else -%}{{ lv.price | money }}{%- endif -%}
+          </span>
         {%- endif -%}
       </div>
 
@@ -93,7 +95,7 @@
       "default": "Un cepillo con el jabón dentro. Aprietas el botón, sale la dosis justa por las escobillas y friegas."
     },
     { "type": "text", "id": "button_label", "label": "Botón", "default": "Comprar ahora" },
-    { "type": "url", "id": "button_link", "label": "Enlace del botón", "info": "Déjalo vacío para llevar a la sección de packs." }
+    { "type": "url", "id": "button_link", "label": "Enlace del botón", "info": "Déjalo vacío para llevar a la ficha del producto." }
   ],
   "blocks": [
     {

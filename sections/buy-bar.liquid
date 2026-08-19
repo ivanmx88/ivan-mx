@@ -11,9 +11,11 @@
   <div class="buybar" data-buybar>
     <div class="buybar__info">
       <span class="buybar__name">{{ section.settings.label | default: bp.title }}</span>
-      <span class="buybar__price">{{ bv.price | money }}</span>
+      <span class="buybar__price">
+        {%- if bp.price_varies -%}Desde {{ bp.price_min | money }}{%- else -%}{{ bv.price | money }}{%- endif -%}
+      </span>
     </div>
-    <a class="button" href="{{ section.settings.button_link | default: '#comprar' }}">
+    <a class="button" href="{{ section.settings.button_link | default: bp.url }}">
       {{ section.settings.button_label }}
     </a>
   </div>
@@ -26,7 +28,7 @@
     { "type": "product", "id": "product", "label": "Producto" },
     { "type": "text", "id": "label", "label": "Texto pequeño", "info": "Si lo dejas vacío se usa el nombre del producto." },
     { "type": "text", "id": "button_label", "label": "Botón", "default": "Comprar ahora" },
-    { "type": "url", "id": "button_link", "label": "Enlace del botón", "info": "Vacío lleva a la sección de packs." }
+    { "type": "url", "id": "button_link", "label": "Enlace del botón", "info": "Vacío lleva a la ficha del producto." }
   ],
   "presets": [{ "name": "Barra de compra fija" }]
 }
