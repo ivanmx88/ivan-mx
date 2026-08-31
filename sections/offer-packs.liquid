@@ -81,7 +81,7 @@
           {%- endif -%}
 
           {%- if matches > 0 -%}
-            {%- form 'product', p, id: 'PackForm-' | append: block.id -%}
+            {%- form block.id -%}
               {%- if matches > 1 -%}
                 <label class="field__label" for="PackVariant-{{ block.id }}">Color</label>
                 <select class="field__input" id="PackVariant-{{ block.id }}" name="id" style="margin-bottom: 0.75rem;">
@@ -166,3 +166,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- form 'product', p, id: 'PackForm-' | append: block.id -%}"
+  to: "{%- form block.id -%}"
+  position: 3092..3113
+{% endcomment %}
